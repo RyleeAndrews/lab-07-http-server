@@ -1,0 +1,21 @@
+{
+  "name": "lab-07-http-server",
+  "version": "1.0.0",
+  "description": "![cf](https://i.imgur.com/7v5ASc8.png) Lab 07: Vanilla HTTP Server ======",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RyleeAndrews/lab-07-http-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RyleeAndrews/lab-07-http-server/issues"
+  },
+  "homepage": "https://github.com/RyleeAndrews/lab-07-http-server#readme"
+}
