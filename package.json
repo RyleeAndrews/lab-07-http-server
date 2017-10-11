@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/RyleeAndrews/lab-07-http-server/issues"
   },
-  "homepage": "https://github.com/RyleeAndrews/lab-07-http-server#readme"
+  "homepage": "https://github.com/RyleeAndrews/lab-07-http-server#readme",
+  "dependencies": {
+    "cowsay": "^1.2.1",
+    "nodemon": "^1.12.1"
+  }
 }
