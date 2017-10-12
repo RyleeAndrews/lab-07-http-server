@@ -14,8 +14,8 @@ const server = module.exports = http.createServer( (req,res) => {
   if(req.method === 'GET' && req.url.pathname === '/'){
     sendResponse(res,200,'<a href="/cowsay">cowsay</a> <main> project description </main> ');
   }else if(req.method === 'GET' && req.url.pathname === '/cowsay'){
-
-    sendResponse(res,200,cowsay.say({"text": "cowsay"}));
+    req.url.query = querystring.parse(req.url.query);
+    sendResponse(res,200,cowsay.say({text: `${req.url.query.text}`}));
   }else if(req.method === 'POST' && req.url.pathname === '/api/cowsay'){
     let body = '';
     req.on('data', function(data){
