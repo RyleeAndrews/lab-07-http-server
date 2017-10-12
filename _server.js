@@ -41,3 +41,30 @@ const server = module.exports = http.createServer( (req,res) => {
   }
 }
 );
+
+
+server.start = function(){
+
+
+  return new Promise((resolve,reject) => {
+    if(server.address === null){
+      resolve(server.listen(3000));
+    }
+    if(err);
+    reject(err);
+  });
+};
+
+server.stop = function(){
+
+  return new Promise((resolve,reject) => {
+    if(server.address === 3000){
+      resolve(server.on('end', function(){
+        server.end();
+      }));
+      if(err)
+        reject(err);
+    }
+  }
+);
+};
