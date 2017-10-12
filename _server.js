@@ -9,6 +9,7 @@ let sendResponse = function(res,status,body){
   res.write(body);
   res.end();
 };
+
 const server = module.exports = http.createServer( (req,res) => {
   req.url = url.parse(req.url);
   if(req.method === 'GET' && req.url.pathname === '/'){
@@ -21,14 +22,14 @@ const server = module.exports = http.createServer( (req,res) => {
       sendResponse(res,200,cowsay.say({text: `${req.url.query.text}`}));
     }
   }else if(req.method === 'POST' && req.url.pathname === '/api/cowsay'){
-    let body = '';
+    let body = {"text": "<message>"};
     req.on('data', function(data){
       body += data.toString();
     });
     req.on('end', function(){
       let json;
       try {
-        json = JSON.parse(body);
+        json = JSON.stringify(body);
       } catch(e) {
         return sendResponse(res,400,'{"error":"invalid request: body required"}');
       }
